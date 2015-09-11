@@ -1,5 +1,3 @@
-package main;
-
 public class Game {
     private String mAnswer;
     //This parameter stores the correct guesses
