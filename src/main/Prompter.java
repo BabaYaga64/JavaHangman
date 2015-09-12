@@ -3,5 +3,5 @@ public class Prompter {
 
     public static void main(String[] args) {
         // write your code here
-    }
-}
+    }//Ends main method
+}//Ends Prompter class
