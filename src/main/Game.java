@@ -1,5 +1,8 @@
+import java.lang.String;
+
 public class Game {
     public static void main(String[] args) {
+        public static final int MAX_MISSES = 7;
         private String mAnswer;
         //This parameter stores the correct guesses
         private String mHits;
@@ -32,6 +35,26 @@ public class Game {
 
         return isHit;
     }
+
+    //Displays current progress of the guesses - dashes for unguessed letters, and the letter for guessed letters.
+    public String getCurrentProgress() {
+        //Start with an empty string
+        String progress = "";
+        //Loop through each of the letters in the answer
+        for (char letter: mAnswer.toCharArray()) {
+            char display = '-';
+            if (mHits.indexOf(letter) >= 0) {
+                display = letter;
+            }//End if statement
+            progress += display;
+        }//End for loop
+        return progress;
+    }//End getCurrentProgress
+
+    public int getRemainingTries() {
+        return MAX_MISSES - mMisses.length();
+
+    }//End getRemainingTries
 
     }//Ends main method
 }//Ends Game class

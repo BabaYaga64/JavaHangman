@@ -14,6 +14,13 @@ public class Prompter {
         mGame = game;
     }//ends Prompter constructor
 
+    public void play() {
+        while (mGame.getRemainingTries() > 0) {
+            displayProgress();
+            promptForGuess();
+        }//End while
+    }//End play
+
     //Prompter object prompts for a guess
     public boolean promptForGuess() {
         //Console object is imported from java.io.Console
@@ -24,9 +31,18 @@ public class Prompter {
         char guess = guessAsString.charAt(0);
         //Pass what Game object returns for that first char
         return mGame.applyGuess(guess);
-
-
     }//Ends promptForGuess
 
+    public void displayProgress() {
+        System.out.printf("You have %d tries left to solve: %s\n",
+                mGame.getRemainingTries(),
+                mGame.getCurrentProgress());
+    }//Ends displayProgress
 
 }//Ends Prompter class
+
+
+
+
+
+
